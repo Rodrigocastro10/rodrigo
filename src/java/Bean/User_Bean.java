@@ -5,15 +5,21 @@
  */
 package Bean;
 
-public class User_bean {
+public class User_Bean {
+
     
+    
+    private int idUser; //Atributo preenchido automaticamente no banco de dados
     private String name;
     private int age;
     private  int password;
     private String skils;
     private String email;
 
-    public User_bean(String name, int age, int password, String skils, String email) {
+    //Método construtor para a formação do Objeto...A formação do objeto exige preenchimento 
+    //de todos os atributos, com excessão so IdUser que será preenchido automaticamente no banco de
+    //dados
+    public User_Bean(String name, int age, int password, String skils, String email) {
         this.name = name;
         this.age = age;
         this.password = password;
@@ -22,9 +28,8 @@ public class User_bean {
     }
     
 
-    
-    
-    
+    //Métodos de requisição e inserção de dados referentes aos atributos..
+    //Fonece acesso a classe para a formação do objeto..
     public void setName(String name) {
         this.name = name;
     }
@@ -65,9 +70,14 @@ public class User_bean {
         return email;
     }
     
-    
-    
-    
+   
+     public int getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
+    }
     
     
     
