@@ -3,23 +3,45 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Bean;
+package BEAN;
 
-public class User_Bean {
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+/**
+ *
+ * @author Rodrigo
+ */
+@Entity
+@Table(name = "usuario")
+public class UserBean implements Serializable{
 
     
     
+    @Id
     private int idUser; //Atributo preenchido automaticamente no banco de dados
+    @Column
     private String name;
+    @Column
     private int age;
+    @Column
     private  int password;
+    @Column
     private String skils;
+    @Column
     private String email;
+
+    public UserBean() {
+    }
+
 
     //Método construtor para a formação do Objeto...A formação do objeto exige preenchimento 
     //de todos os atributos, com excessão so IdUser que será preenchido automaticamente no banco de
     //dados
-    public User_Bean(String name, int age, int password, String skils, String email) {
+    public UserBean(String name, int age, int password, String skils, String email) {
         this.name = name;
         this.age = age;
         this.password = password;

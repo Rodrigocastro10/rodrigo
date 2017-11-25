@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Bean;
+package BEAN;
 
 /**
  *está classe servirá como relacionamento entre o susuário proponente, o usuário executor e a oferta de
