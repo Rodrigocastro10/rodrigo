@@ -24,24 +24,29 @@ public class UserBean implements Serializable{
     @Id
     private int idUser; //Atributo preenchido automaticamente no banco de dados
     @Column
-    private String name;
+    private String nick; //apelido do usuario para efetuar login
     @Column
-    private int age;
+    private String name; //nome do usuario
     @Column
-    private  int password;
+    private int age; // idade do usuario
     @Column
-    private String skils;
+    private  int password; // senha para realizar login
     @Column
-    private String email;
+    private String skils; // habilidades pertencentes ao usuário
+    @Column
+    private String email; // email do usuário
 
     public UserBean() {
     }
+
+   
 
 
     //Método construtor para a formação do Objeto...A formação do objeto exige preenchimento 
     //de todos os atributos, com excessão so IdUser que será preenchido automaticamente no banco de
     //dados
-    public UserBean(String name, int age, int password, String skils, String email) {
+    public UserBean(String nick,String name, int age, int password, String skils, String email) {
+        this.nick = nick;
         this.name = name;
         this.age = age;
         this.password = password;
@@ -52,6 +57,14 @@ public class UserBean implements Serializable{
 
     //Métodos de requisição e inserção de dados referentes aos atributos..
     //Fonece acesso a classe para a formação do objeto..
+    
+    public String getNick() {
+        return nick;
+    }
+
+    public void setNick(String nick) {
+        this.nick = nick;
+    }
     public void setName(String name) {
         this.name = name;
     }

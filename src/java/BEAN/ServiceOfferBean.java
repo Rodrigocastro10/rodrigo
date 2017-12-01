@@ -6,7 +6,7 @@
 package BEAN;
 
 
-public class ServiceOffer_Bean {
+public class ServiceOfferBean {
 
     
 
@@ -18,7 +18,7 @@ public class ServiceOffer_Bean {
     private String skillsrequired;//Habilidades requeridas para execução do serviço
     
     //Método construtor da classe. Id do usuário e do serviço serão fornecidos pelo banco de dados
-    public ServiceOffer_Bean(String name, String description, int deadline, String skillsrequired) {
+    public ServiceOfferBean(String name, String description, int deadline, String skillsrequired) {
         this.name = name;
         this.description = description;
         this.deadline = deadline;
