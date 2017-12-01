@@ -5,17 +5,39 @@
  */
 package BEAN;
 
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-public class ServiceOfferBean {
+
+
+
+
+@Entity
+@Table(name = "servico")
+public class ServiceOfferBean implements Serializable{
+
+   @Column
+   private int iduser;//id do usuário. acrescentado no banco de dados
+   @Id
+   private int idservice;//id do serviço. acrescentdo no banco de dados
+   @Column
+   private String name;// nome do serviço
+   @Column
+    private String description;//descrição do serviço
+   @Column
+    private int deadline;//Prazo para conclusão do serviço
+   @Column
+    private String skillsrequired;//Habilidades requeridas para execução do serviço
+    
+    public ServiceOfferBean() {
+    }
 
     
 
-    private int iduser;//id do usuário. acrescentado no banco de dados
-    private int idservice;//id do serviço. acrescentdo no banco de dados
-    private String name;// nome do serviço
-    private String description;//descrição do serviço
-    private int deadline;//Prazo para conclusão do serviço
-    private String skillsrequired;//Habilidades requeridas para execução do serviço
+    
     
     //Método construtor da classe. Id do usuário e do serviço serão fornecidos pelo banco de dados
     public ServiceOfferBean(String name, String description, int deadline, String skillsrequired) {
