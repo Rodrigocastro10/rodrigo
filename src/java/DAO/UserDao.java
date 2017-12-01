@@ -13,7 +13,7 @@ import org.hibernate.SessionFactory;
  *
  * @author Rodrigo
  */
-public class User_Dao {
+public class UserDao {
     SessionFactory sf = HibernateUtil.getSessionFactory();
     
     

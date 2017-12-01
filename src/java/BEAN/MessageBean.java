@@ -4,22 +4,41 @@
  * and open the template in the editor.
  */
 package BEAN;
+
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  *
  * @author Dirgo Peres
  */
-public class Message_Bean {
+@Entity
+@Table (name = "message")
+public class MessageBean implements Serializable{
+    @Id
     private int iDMessage; //a chave primária desta mensagem
+    @Column
     private int iDusersender;//a chave estrangeira de usuário que enviou esta mensagem
+    @Column
     private int iDuserreceiver;//a chave estrangeira do usuário para qual essa mensagem foi enviada;
+    @Column
     private String content; //o conteúdo propriamente dito desta mensagem
-    private String data;//guardará a data, hora, minutos e segundos de quando essa mendagem foi criada;
+    @Column
+    private String tempo;//guardará a tempo, hora, minutos e segundos de quando essa mendagem foi criada;
+    
+    //construtor vazio para caso o objeto seja instanciado sem parâmetros
+    public MessageBean(){
+        
+    }
 
-    public Message_Bean(int iDMessage, int iDusersender, String content, String data) {
+    public MessageBean(int iDMessage, int iDusersender, String content, String data) {
         this.iDMessage = iDMessage;
         this.iDusersender = iDusersender;
         this.content = content;
-        this.data = data;
+        this.tempo = data;
     }
 
     public int getiDMessage() {
@@ -54,12 +73,12 @@ public class Message_Bean {
         this.content = content;
     }
 
-    public String getData() {
-        return data;
+    public String getTempo() {
+        return tempo;
     }
 
-    public void setData(String data) {
-        this.data = data;
+    public void setTempo(String tempo) {
+        this.tempo = tempo;
     }
     
     
