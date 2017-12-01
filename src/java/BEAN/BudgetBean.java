@@ -19,7 +19,7 @@ import javax.persistence.Table;
 @Table (name = "budget")
 public class BudgetBean implements Serializable{
     @Id
-    private int iDbudget; //guardará o ID desse relacionamento no BD
+    private int iDbudget; //guardará o ID desse relacionamento no banco de dados
     @Column
     private int iDuserproponent; //guardará o ID do user que criou a oferta, como chave estrangeira no BD
     @Column
