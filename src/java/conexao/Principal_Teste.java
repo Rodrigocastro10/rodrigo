@@ -1,8 +1,10 @@
 package conexao;
 
+import DAO.UserDao;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
+
+//import org.hibernate.Session;
+//import org.hibernate.SessionFactory;
 
 
 /**
@@ -18,6 +20,9 @@ public class Principal_Teste {
         // TODO code application logic here
         System.out.println("Iniciando...");
     
+        UserDao usuario = new UserDao();
+        usuario.saveUser();
+        /**
         SessionFactory sf = HibernateUtil.getSessionFactory();
         Session session = sf.openSession();
         session.close();
@@ -25,6 +30,7 @@ public class Principal_Teste {
         System.out.print("Salvou, Disgraaaaaça! Chupa, Renan!");
 
         System.out.println("Finalizando...");
+        **/
     }
     
 }
