@@ -1,5 +1,6 @@
 package conexao;
 
+import BEAN.UserBean;
 import DAO.UserDao;
 
 
@@ -19,9 +20,15 @@ public class Principal_Teste {
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.println("Iniciando...");
-    
+        UserBean user = new UserBean();
+        user.setAge(1);
+        user.setEmail("ii");
+        user.setName("ww");
+        user.setNick("nick");
+        user.setPassword(88);
+        
         UserDao usuario = new UserDao();
-        usuario.saveUser();
+        usuario.saveUser(user);
         /**
         SessionFactory sf = HibernateUtil.getSessionFactory();
         Session session = sf.openSession();

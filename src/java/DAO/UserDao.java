@@ -5,7 +5,9 @@
  */
 package DAO;
 
+import BEAN.UserBean;
 import conexao.HibernateUtil;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
@@ -15,11 +17,19 @@ import org.hibernate.SessionFactory;
  */
 public class UserDao {
     SessionFactory sf = HibernateUtil.getSessionFactory();
+    Session session = sf.openSession();
     
-    
-    public void saveUser (){
-        Session session = sf.openSession();
-        session.close();
-        System.out.print("Salvou, Disgraaaaaça! Chupa, Renan!");
-    }
+    public void saveUser (UserBean user){
+        try{
+            
+            session.beginTransaction();
+            session.persist(user);
+            session.getTransaction().commit();
+            session.close();
+            System.out.print("Salvou, Disgraaaaaça! Chupa, Renan!");
+        }catch(HibernateException ex){
+            session.getTransaction().rollback();
+        
+        }
+        }
 }
