@@ -25,7 +25,7 @@ public class Principal_Teste {
         user.setEmail("ii");
         user.setName("ww");
         user.setNick("nick");
-        user.setPassword(88);
+        user.setPassword("88");
         
         UserDao usuario = new UserDao();
         usuario.saveUser(user);
