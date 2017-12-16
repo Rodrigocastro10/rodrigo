@@ -22,14 +22,15 @@ public class Principal_Teste {
         System.out.println("Iniciando...");
         UserBean user = new UserBean();
         user.setAge(25);
-        user.setEmail("diegoperes142@gmail.com");
-        user.setName("Huanes Rodrigues");
-        user.setNick("MrLink1154");
+        user.setEmail("ana@gmail.com");
+        user.setName("ana Rodrigues");
+        user.setNick("Maaaani");
         user.setPassword("12345678zz9");
-        user.setSkils("Poderoso compilador");
+        user.setSkils("parangaricotirimirruarocompilador");
         
         UserDao usuario = new UserDao();
-        usuario.saveUser(user);
+        //usuario.saveUser(user);
+        usuario.delete(user);
         /**
         SessionFactory sf = HibernateUtil.getSessionFactory();
         Session session = sf.openSession();
