@@ -21,11 +21,12 @@ public class Principal_Teste {
         // TODO code application logic here
         System.out.println("Iniciando...");
         UserBean user = new UserBean();
-        user.setAge(1);
-        user.setEmail("ii");
-        user.setName("ww");
-        user.setNick("nick");
-        user.setPassword("88");
+        user.setAge(25);
+        user.setEmail("diegoperes142@gmail.com");
+        user.setName("Huanes Rodrigues");
+        user.setNick("MrLink1154");
+        user.setPassword("12345678zz9");
+        user.setSkils("Poderoso compilador");
         
         UserDao usuario = new UserDao();
         usuario.saveUser(user);

@@ -8,6 +8,8 @@ package BEAN;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -21,7 +23,8 @@ public class UserBean implements Serializable{
 
     
     
-    @Id
+    @Id @GeneratedValue (strategy = GenerationType.AUTO)
+    @Column (name= "idUser", unique = true, nullable = false)
     private int idUser; //Atributo preenchido automaticamente no banco de dados
     @Column
     private String nick; //apelido do usuario para efetuar login

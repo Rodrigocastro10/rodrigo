@@ -23,13 +23,15 @@ public class UserDao {
         try{
             
             session.beginTransaction();
-            session.persist(user);
+            session.merge(user);
+            session.flush();
             session.getTransaction().commit();
-            session.close();
+            
             System.out.print("Salvou, Disgraaaaaça! Chupa, Renan!");
         }catch(HibernateException ex){
             session.getTransaction().rollback();
         
         }
+        session.close();
         }
 }
