@@ -24,7 +24,7 @@ public class UserBean implements Serializable{
     
     
     @Id @GeneratedValue (strategy = GenerationType.AUTO)
-    @Column (name= "idUser", unique = true, nullable = false)
+    @Column (name= "iduser", unique = true, nullable = false)
     private int idUser; //Atributo preenchido automaticamente no banco de dados
     @Column
     private String nick; //apelido do usuario para efetuar login

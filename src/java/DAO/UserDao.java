@@ -67,30 +67,27 @@ public class UserDao {
         }
         session.close();
     }
-    /*
-    public UserBean searchByRecord(String name) {
-        
-        try {
+    
+    public UserBean searchById(int iduser) {
+        UserBean user= new UserBean();
+        try {   
+            
             session.beginTransaction();
-            Query qu = session.createQuery("select usuario where usuario name =:name"); 
-            qu.setParameter("recordNo", RecordNo);
-            daoSearchList = qu.list();
-            int count = daoSearchList.size();
+            String hql = "from usuario where usuario.iduser = :iduser";
+            Query query = session.createQuery(hql);
+            query.setParameter("iduser",iduser );
+            
             session.getTransaction().commit();
+            System.out.print("oiaakakka");
         } catch (Exception e) {
-            e.printStackTrace();
             session.getTransaction().rollback();
         } finally {
             session.close();
+            
         }
-        return daoSearchList;
+        return  user;
         
  }
-    */
-    
-    
-    
-    
     
     
 }

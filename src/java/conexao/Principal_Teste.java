@@ -20,17 +20,19 @@ public class Principal_Teste {
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.println("Iniciando...");
-        UserBean user = new UserBean();
-        user.setAge(25);
+       /* UserBean user = new UserBean();
+        user.setAge(100);
         user.setEmail("ana@gmail.com");
-        user.setName("ana Rodrigues");
-        user.setNick("Maaaani");
+        user.setName("juba Rodrigues");
+        user.setNick("Maaaafffni");
         user.setPassword("12345678zz9");
-        user.setSkils("parangaricotirimirruarocompilador");
-        
+        user.setSkils("parangaricotirimirruarocompilador");*/
+      
         UserDao usuario = new UserDao();
         //usuario.saveUser(user);
-        usuario.delete(user);
+        UserBean user= usuario.searchById(3);
+        System.out.print(user.getName()+user.getIdUser()+ user.getEmail());
+        //usuario.delete(user);
         /**
         SessionFactory sf = HibernateUtil.getSessionFactory();
         Session session = sf.openSession();
