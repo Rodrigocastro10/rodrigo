@@ -19,19 +19,24 @@ public class Principal_Teste {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println("Iniciando...");
-       /* UserBean user = new UserBean();
-        user.setAge(100);
-        user.setEmail("ana@gmail.com");
-        user.setName("juba Rodrigues");
-        user.setNick("Maaaafffni");
-        user.setPassword("12345678zz9");
-        user.setSkils("parangaricotirimirruarocompilador");*/
-      
         UserDao usuario = new UserDao();
-        //usuario.saveUser(user);
-        UserBean user= usuario.searchById(3);
-        System.out.print(user.getName()+user.getIdUser()+ user.getEmail());
+        
+        /*System.out.println("Iniciando...");
+        UserBean user = new UserBean();
+        user.setAge(100);
+        user.setEmail("Sr incrivel@gmail.com");
+        user.setName("bochecha Rodrigues");
+        user.setNick("C&B");
+        user.setPassword("223s");
+        user.setSkils("parangaricotirimirruarocompilador");
+        usuario.saveUser(user);
+        */
+      
+        
+        //
+        UserBean user = usuario.searchById(3);
+        System.out.print(user.getIdUser()+" O zero");
+        //System.out.print(user.getName()+user.getIdUser()+ user.getEmail());
         //usuario.delete(user);
         /**
         SessionFactory sf = HibernateUtil.getSessionFactory();
@@ -42,6 +47,7 @@ public class Principal_Teste {
 
         System.out.println("Finalizando...");
         **/
+        System.exit(0);
     }
     
 }

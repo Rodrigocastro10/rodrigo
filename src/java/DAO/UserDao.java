@@ -7,6 +7,7 @@ package DAO;
 
 import BEAN.UserBean;
 import conexao.HibernateUtil;
+import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -69,23 +70,25 @@ public class UserDao {
     }
     
     public UserBean searchById(int iduser) {
-        UserBean user= new UserBean();
-        try {   
-            
-            session.beginTransaction();
-            String hql = "from usuario where usuario.iduser = :iduser";
-            Query query = session.createQuery(hql);
-            query.setParameter("iduser",iduser );
+        UserBean user = new UserBean();
+       try {   
+            session.beginTransaction();//inicia a transação
+            String hql = "from UserBean where idUser like "+iduser;//cria uma string contendo o HQL que será interpretado em SQL
+            Query query = session.createQuery(hql);//cria a seção da Query utilizando o HQL como parâmetro
+            List <UserBean> UserList = query.list();//cria a lista de resultados para receber a consulta da query
+           // query.setParameter("keyword", iduser);
+            query.setMaxResults(1);//informa para a query que será necessário apenas um resultado
+            user = UserList.get(0);//pega o primeiro resultado da lista e adiciona no User para poder retorná-lo
             
             session.getTransaction().commit();
-            System.out.print("oiaakakka");
+            
         } catch (Exception e) {
             session.getTransaction().rollback();
         } finally {
             session.close();
-            
-        }
-        return  user;
+           
+        } 
+            return  user;
         
  }
     
