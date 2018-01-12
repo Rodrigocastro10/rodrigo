@@ -26,17 +26,17 @@ public class UserDao {
     public void saveUser(UserBean user) {
         try {
 
-            session.beginTransaction();
-            session.merge(user);
+            session.beginTransaction();//inicia a transação
+            session.merge(user);//recebe o usuario
             session.flush();
-            session.getTransaction().commit();
+            session.getTransaction().commit();// executar inclusão do usuario no banco
 
             System.out.print("Salvou, Disgraaaaaça! Chupa, Renan!");
         } catch (HibernateException ex) {
             session.getTransaction().rollback();
 
         }
-        session.close();
+        session.close();//fecha sessão
     }
 
     //Método para deletar dados de usuários do banco de dados

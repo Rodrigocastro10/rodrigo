@@ -35,7 +35,7 @@ public class UserBean implements Serializable{
     @Column
     private  String password; // senha para realizar login
     @Column
-    private String skils; // habilidades pertencentes ao usuário
+    private String skills; // habilidades pertencentes ao usuário
     @Column
     private String email; // email do usuário
 
@@ -48,12 +48,12 @@ public class UserBean implements Serializable{
     //Método construtor para a formação do Objeto...A formação do objeto exige preenchimento 
     //de todos os atributos, com excessão so IdUser que será preenchido automaticamente no banco de
     //dados
-    public UserBean(String nick,String name, int age, String password, String skils, String email) {
+    public UserBean(String nick,String name, int age, String password, String skills, String email) {
         this.nick = nick;
         this.name = name;
         this.age = age;
         this.password = password;
-        this.skils = skils;
+        this.skills = skills;
         this.email = email;
     }
     
@@ -80,8 +80,8 @@ public class UserBean implements Serializable{
         this.password = password;
     }
 
-    public void setSkils(String skils) {
-        this.skils = skils;
+    public void setSkills(String skills) {
+        this.skills = skills;
     }
 
     public void setEmail(String email) {
@@ -100,8 +100,8 @@ public class UserBean implements Serializable{
         return password;
     }
 
-    public String getSkils() {
-        return skils;
+    public String getSkills() {
+        return skills;
     }
 
     public String getEmail() {
