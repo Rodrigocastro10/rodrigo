@@ -28,7 +28,7 @@ public class Principal_Teste {
         user.setName("bochecha Rodrigues");
         user.setNick("C&B");
         user.setPassword("223s");
-        user.setSkils("parangaricotirimirruarocompilador");
+        user.setSkills("parangaricotirimirruarocompilador");
         usuario.saveUser(user);
         */
       
