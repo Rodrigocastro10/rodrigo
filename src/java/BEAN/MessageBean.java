@@ -8,8 +8,18 @@ package BEAN;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import org.hibernate.FetchMode;
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+import org.hibernate.annotations.Fetch;
 
 /**
  *
@@ -18,12 +28,16 @@ import javax.persistence.Table;
 @Entity
 @Table (name = "message")
 public class MessageBean implements Serializable{
-    @Id
+    
+    @Id @GeneratedValue (strategy = GenerationType.AUTO)
+    @Column (name= "idmessage", unique = true, nullable = false)
     private int iDMessage; //a chave primária desta mensagem
-    @Column
-    private int iDusersender;//a chave estrangeira de usuário que enviou esta mensagem
-    @Column
-    private int iDuserreceiver;//a chave estrangeira do usuário para qual essa mensagem foi enviada;
+    @ManyToOne
+    @JoinColumn(name = "idsender",nullable = false)
+    private UserBean iDusersender;//a chave estrangeira de usuário que enviou esta mensagem
+    @ManyToOne
+    @JoinColumn(name = "idreceiver", nullable = false) 
+    private UserBean iDuserreceiver;//a chave estrangeira do usuário para qual essa mensagem foi enviada;
     @Column
     private String content; //o conteúdo propriamente dito desta mensagem
     @Column
@@ -34,7 +48,7 @@ public class MessageBean implements Serializable{
         
     }
 
-    public MessageBean(int iDMessage, int iDusersender, String content, String data) {
+    public MessageBean(int iDMessage, UserBean iDusersender, String content, String data) {
         this.iDMessage = iDMessage;
         this.iDusersender = iDusersender;
         this.content = content;
@@ -49,20 +63,20 @@ public class MessageBean implements Serializable{
         this.iDMessage = iDMessage;
     }
 
-    public int getiDusersender() {
+    public UserBean getiDusersender() {
         return iDusersender;
     }
 
-    public void setiDusersender(int iDusersender) {
+    public void setUserSender(UserBean iDusersender) {
         this.iDusersender = iDusersender;
     }
 
-    public int getiDuserreceiver() {
+    public UserBean getiDuserreceiver() {
         return iDuserreceiver;
     }
 
-    public void setiDuserreceiver(int iDuserreceiver) {
-        this.iDuserreceiver = iDuserreceiver;
+    public void setUserreceiver(UserBean userreceiver) {
+        this.iDuserreceiver = userreceiver;
     }
 
     public String getContent() {
