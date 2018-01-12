@@ -21,6 +21,7 @@ import org.hibernate.SessionFactory;
 public class ServiceDao {
      SessionFactory sf = HibernateUtil.getSessionFactory();
      
+     //Salvar oferta
      public void saveOffer(ServiceOfferBean offer) {
         Session session = sf.openSession();
         try {
@@ -38,7 +39,7 @@ public class ServiceDao {
         }
         session.close();//fecha sessão
     }
-     
+     //Método para buscar serviço
      public ServiceOfferBean searchByIdService(int idservice) {
          Session session = sf.openSession();
         ServiceOfferBean offer = new ServiceOfferBean();
@@ -65,5 +66,41 @@ public class ServiceDao {
      
      
      }
+     //Método para deletar serviço
+     public void deleteOferta(ServiceOfferBean offer) {
+         Session session = sf.openSession();
+        try {
+       
+            int id = offer.getIdservice();
+            session.beginTransaction();
+            session.delete(offer);
+            session.getTransaction().commit();
+            System.out.print("oferta numero  "+ id+ " foi deletada");
+
+        } catch (HibernateException ex) {
+            session.getTransaction().rollback();
+            System.out.print("Oferta nao pode ser deletada ou não existe");
+
+        }
+        session.close();
+    }
+     
+      //Método para atualizar dados do serviço
+    public void updateService(ServiceOfferBean offer) {
+        Session session = sf.openSession();
+        try {
+            session.beginTransaction();
+            session.update(offer);
+            session.flush();
+            session.getTransaction().commit();
+            System.out.print("Atualização realizada");
+        } catch (HibernateException e) {
+            session.getTransaction().rollback();
+            System.out.print("Problemas ao realizar update");
+        }
+        session.close();
+    }
+     
+     
     
 }

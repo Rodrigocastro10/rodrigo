@@ -43,8 +43,13 @@ public class Principal_Teste {
         offer.setSkillsrequired("ddddlise outros");
         serv.saveOffer(offer);*/
         
-        offer=serv.searchByIdService(2);
+        offer=serv.searchByIdService(3);
         System.out.println("numero do serviço é "+offer.getIdservice()+" nome do serviço "+offer.getName());
+        //serv.deleteOferta(offer);
+        String nome="ginaaaaaaa";
+        offer.setName(nome);
+        serv.updateService(offer);
+        
         
           
         
