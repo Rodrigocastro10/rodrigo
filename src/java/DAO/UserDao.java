@@ -20,12 +20,13 @@ import org.hibernate.SessionFactory;
 public class UserDao {
     //Abertura se sessão Hibernate
     SessionFactory sf = HibernateUtil.getSessionFactory();
-    Session session = sf.openSession();
+    
 
     //Método para salvar usuário no banco de dados
     public void saveUser(UserBean user) {
+        Session session = sf.openSession();
         try {
-
+            
             session.beginTransaction();//inicia a transação
             session.merge(user);//recebe o usuario
             session.flush();
@@ -41,14 +42,18 @@ public class UserDao {
 
     //Método para deletar dados de usuários do banco de dados
     public void delete(UserBean user) {
-
+         Session session = sf.openSession();
         try {
+       
             int id = user.getIdUser();
             session.beginTransaction();
             session.delete(user);
+            session.getTransaction().commit();
+            System.out.print("usuario "+ id+ " deletado");
 
         } catch (HibernateException ex) {
             session.getTransaction().rollback();
+            System.out.print("Usuario nao pode ser deletado ou não existe");
 
         }
         session.close();
@@ -56,7 +61,7 @@ public class UserDao {
 
     //Método para atualizar dados do Usuário
     public void update(UserBean user) {
-       
+        Session session = sf.openSession();
         try {
             session.beginTransaction();
             session.update(user);
@@ -65,11 +70,13 @@ public class UserDao {
             
         } catch (HibernateException e) {
             session.getTransaction().rollback();
+            System.out.print("Problemas ao realizar update");
         }
         session.close();
     }
     
     public UserBean searchById(int iduser) {
+         Session session = sf.openSession();
         UserBean user = new UserBean();
        try {   
             session.beginTransaction();//inicia a transação
@@ -84,6 +91,7 @@ public class UserDao {
             
         } catch (Exception e) {
             session.getTransaction().rollback();
+            System.out.print("Transação não pode ser efetuada ou usuario não existe");
         } finally {
             session.close();
            

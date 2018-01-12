@@ -8,6 +8,8 @@ package BEAN;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -21,7 +23,8 @@ public class ServiceOfferBean implements Serializable{
 
    @Column
    private int iduser;//id do usuário. acrescentado no banco de dados
-   @Id
+   @Id @GeneratedValue (strategy = GenerationType.AUTO)
+   @Column (name= "idservice", unique = true, nullable = false)
    private int idservice;//id do serviço. acrescentdo no banco de dados
    @Column
    private String name;// nome do serviço

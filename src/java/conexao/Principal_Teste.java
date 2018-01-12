@@ -1,6 +1,8 @@
 package conexao;
 
+import BEAN.ServiceOfferBean;
 import BEAN.UserBean;
+import DAO.ServiceDao;
 import DAO.UserDao;
 
 
@@ -19,34 +21,34 @@ public class Principal_Teste {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        UserDao usuario = new UserDao();
+       // UserDao usuario = new UserDao();
         
         /*System.out.println("Iniciando...");
         UserBean user = new UserBean();
         user.setAge(100);
         user.setEmail("Sr incrivel@gmail.com");
-        user.setName("bochecha Rodrigues");
+        user.setName("hulk");
         user.setNick("C&B");
         user.setPassword("223s");
         user.setSkills("parangaricotirimirruarocompilador");
         usuario.saveUser(user);
         */
-      
+        ServiceDao serv= new ServiceDao();
+        ServiceOfferBean offer= new ServiceOfferBean();
+        /*offer.setIduser(3);
+        offer.setDeadline(10);
+        offer.setIduser(2);
+        offer.setDescription("Consertar pc");
+        offer.setName("jlll");
+        offer.setSkillsrequired("ddddlise outros");
+        serv.saveOffer(offer);*/
         
-        //
-        UserBean user = usuario.searchById(3);
-        System.out.print(user.getIdUser()+" O zero");
-        //System.out.print(user.getName()+user.getIdUser()+ user.getEmail());
-        //usuario.delete(user);
-        /**
-        SessionFactory sf = HibernateUtil.getSessionFactory();
-        Session session = sf.openSession();
-        session.close();
+        offer=serv.searchByIdService(2);
+        System.out.println("numero do serviço é "+offer.getIdservice()+" nome do serviço "+offer.getName());
         
-        System.out.print("Salvou, Disgraaaaaça! Chupa, Renan!");
-
-        System.out.println("Finalizando...");
-        **/
+          
+        
+       
         System.exit(0);
     }
     
