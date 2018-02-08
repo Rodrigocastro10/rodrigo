@@ -6,7 +6,6 @@
 package DAO;
 
 import BEAN.ServiceOfferBean;
-import BEAN.UserBean;
 import conexao.HibernateUtil;
 import java.util.List;
 import org.hibernate.HibernateException;
