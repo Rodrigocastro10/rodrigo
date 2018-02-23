@@ -3,13 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Rodrigo/Documents/NetBeansProjects/rodrigo/src/java/DAO/UserDao.java</file>
-            <file>file:/C:/Users/Rodrigo/Documents/NetBeansProjects/rodrigo/src/java/BEAN/UserBean.java</file>
-            <file>file:/C:/Users/Rodrigo/Documents/NetBeansProjects/rodrigo/src/java/BEAN/ServiceOfferBean.java</file>
-            <file>file:/C:/Users/Rodrigo/Documents/NetBeansProjects/rodrigo/src/java/DAO/ServiceDao.java</file>
-            <file>file:/C:/Users/Rodrigo/Documents/NetBeansProjects/rodrigo/src/java/BEAN/MessageBean.java</file>
-            <file>file:/C:/Users/Rodrigo/Documents/NetBeansProjects/rodrigo/src/java/DAO/MessageDao.java</file>
-            <file>file:/C:/Users/Rodrigo/Documents/NetBeansProjects/rodrigo/src/java/conexao/Principal_Teste.java</file>
+            <file>file:/C:/Users/Rodrigo/Documents/NetBeansProjects/rodrigo/web/index.xhtml</file>
+            <file>file:/C:/Users/Rodrigo/Documents/NetBeansProjects/rodrigo/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/Rodrigo/Documents/NetBeansProjects/rodrigo/web/criarservico.xhtml</file>
+            <file>file:/C:/Users/Rodrigo/Documents/NetBeansProjects/rodrigo/src/java/Servlets/Servlet1.java</file>
         </group>
     </open-files>
 </project-private>
